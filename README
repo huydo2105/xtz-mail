@@ -1,0 +1,22 @@
+# Nodejs Script Fetching Aggregated Tezos tokens data
+
+
+# Pre-requisites
+- Install [Node.js](https://nodejs.org/en/) version 14.21.1
+
+
+# Getting started
+- Clone the repository
+```
+git clone  <git lab template url> <project_name>
+```
+- Install dependencies
+```
+cd <project_name>
+npm install
+```
+- Build and run the project
+```
+node fetch-data.js
+```
+- After that, we have the html code for the email stored in campaign.html file 
