@@ -19,4 +19,4 @@ npm install
 ```
 node fetch-data.js
 ```
-- After that, we have the html code for the email stored in campaign.html file 
+- After that, we log the tokens data and have the html code for the email stored in campaign.html file 

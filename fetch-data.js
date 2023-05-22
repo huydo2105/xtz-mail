@@ -45,10 +45,10 @@ try {
     console.log(error);
 }
 function compare( a, b ) {
-    if ( a.change7DayUsd < b.change7DayUsd ){
+    if ( a.mktCapUsd < b.mktCapUsd ){
     return 1;
     }
-    if ( a.change7DayUsd > b.change7DayUsd ){
+    if ( a.mktCapUsd > b.mktCapUsd ){
     return -1;
     }
     return 0;
@@ -60,11 +60,29 @@ tokens.map(token => {
     token.volume24Usd = USDollar.format(Math.round(token.volume24Usd * 100) / 100);
     token.usdValue = USDollar.format(Math.round(token.usdValue * 100) / 100);
     token.mktCapUsd = USDollar.format(Math.round(token.mktCapUsd * 100) / 100);
-    token.change7DayUsd = Math.round(token.change7DayUsd * 100) / 100;
+    token.change7DayUsdPercent = Math.round(token.change7DayUsd * 100) / 100;
 })
+
+// Get the date
+function getOrdinalSuffix(day) {
+  const suffixes = ["th", "st", "nd", "rd"];
+  const lastDigit = day % 10;
+  const suffixIndex = lastDigit <= 3 ? lastDigit : 0;
+  return suffixes[suffixIndex];
+}
+
+const currentDate = new Date();
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const monthIndex = currentDate.getMonth();
+const monthName = monthNames[monthIndex];
+const day = currentDate.getDate();
+const year = currentDate.getFullYear();
+const formattedDate = `${monthName} ${day}${getOrdinalSuffix(day)}, ${year}`;
+
 console.log(tokens)
-const topTokens = tokens.slice(0,5);
-ejs.renderFile('campaign.ejs', { topTokens }, (err, html) => {
+const topTokens = tokens.slice(0,10);
+const logoSrc = "https://drive.google.com/uc?export=view&id=1pwJPYxQOeX9txlv9r09qqEgmKCHbV6nD"
+ejs.renderFile('campaign.ejs', { logoSrc, topTokens, formattedDate }, (err, html) => {
     if (err) throw err;
 
     // Write the HTML to a file
