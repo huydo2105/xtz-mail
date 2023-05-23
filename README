@@ -1,22 +1,51 @@
-# Nodejs Script Fetching Aggregated Tezos tokens data
+# Node.js Script Fetching Aggregated Tezos Tokens Data
 
+This Node.js script fetches aggregated data for Tezos tokens. It provides information about various tokens and stores the HTML code for the email campaign in the `campaign.html` file.
 
-# Pre-requisites
-- Install [Node.js](https://nodejs.org/en/) version 14.21.1
+## Prerequisites
 
+Before running the script, make sure you have the following installed:
 
-# Getting started
-- Clone the repository
+- [Node.js](https://nodejs.org/en/) version 18.12.1 or higher.
+
+## Getting Started
+
+Follow these steps to get started with the script:
+
+1. Clone the repository:
+
 ```
-git clone  <git lab template url> <project_name>
+git clone <git_lab_template_url> <project_name>
 ```
-- Install dependencies
+
+2. Navigate to the project directory:
+
 ```
 cd <project_name>
+```
+
+3. Install the dependencies:
+
+```
 npm install
 ```
-- Build and run the project
+
+4. Build the project using webpack:
+
 ```
-node fetch-data.js
+npm run build
 ```
-- After that, we log the tokens data and have the html code for the email stored in campaign.html file 
+
+5. Run the script:
+
+```
+npm run start
+```
+
+6. Once the script completes, the tokens data will be logged in the console. Additionally, the HTML code for the email campaign will be stored in the `campaign.html` file.
+
+Feel free to customize the script according to your requirements.
+
+If you encounter any issues or have any questions, please don't hesitate to reach out.
+
+Happy fetching!

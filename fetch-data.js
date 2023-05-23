@@ -21,7 +21,7 @@ try {
     const xtzUsdHistory = await tzkt.getXtzUsdHistory();
 
     const tokenFeed = await tokenTracker.getTokenFeed(xtzUsd, xtzUsdHistory);
-
+    console.log(tokenFeed)
     
     for (let i = 0; i < tokensToTrack.length; i++) {
       const value = tokensToTrack[i];
