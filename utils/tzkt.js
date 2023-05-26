@@ -4,13 +4,13 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 const makeRequest = async (uri, params = {}) => {
-  return axios.get(`${process.env.VUE_APP_TZKT_API_URL}${uri}`, {
+  return axios.get(`https://api.tzkt.io${uri}`, {
     params: { limit: 1000, ...params },
   });
 };
 
 const makeFutureRequest = async (uri, params = {}) => {
-  return axios.get(`${process.env.VUE_APP_TZKT_API_FUTURE_URL}${uri}`, {
+  return axios.get(`https://staging.api.tzkt.io${uri}`, {
     params: { limit: 1000, ...params },
   });
 };

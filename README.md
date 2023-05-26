@@ -42,7 +42,7 @@ npm run build
 npm run start
 ```
 
-6. Once the script completes, the tokens data will be logged in the console. Additionally, the HTML code for the email campaign will be stored in the `campaign.html` file.
+6. Once the script completes, the tokens data will be logged in the console. 
 
 Feel free to customize the script according to your requirements.
 
